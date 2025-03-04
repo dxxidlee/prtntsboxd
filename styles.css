@@ -214,6 +214,10 @@ h2 {
 
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 1440px) {
+    *{
+        overflow: hidden;
+    }
+
     .genre-btn, .country-btn {
         font-size: 3rem;
     }
@@ -241,6 +245,10 @@ h2 {
 }
 
 @media screen and (max-width: 1024px) {
+    *{
+        overflow: hidden;
+    }
+
     .genre-btn, .country-btn {
         font-size: 2.25rem;
         padding: 0.3rem;
@@ -292,6 +300,10 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    *{
+        overflow: hidden;
+    }
+
     .genre-btn, .country-btn {
         font-size: 2rem;
         padding: 0.2rem;
@@ -350,6 +362,10 @@ h2 {
 }
 
 @media screen and (max-width: 480px) {
+    *{
+        overflow: hidden;
+    }
+
     .genre-btn, .country-btn {
         font-size: 1.6rem;
         padding: 0.15rem;
