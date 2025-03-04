@@ -451,7 +451,7 @@ h2 {
         height: 60px;
         width: 180px;
         right: 0.4rem;
-        bottom: calc(-30px);
+        bottom: calc(0px);
         font-size: 0.8rem;
         min-width: 120px;
     }
