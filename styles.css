@@ -1,0 +1,413 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: url("img/background.png") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+.texture-overlay {
+    position: fixed;
+    top: -50px;
+    left: -150px;
+    width: 140vw;
+    height: 140vh;
+    background: url("img/texture.jpg");
+    background-size: cover;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+
+.selection-display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0rem;
+    position: absolute;
+    bottom: 20vh;
+}
+
+.selection-text {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    left: 2rem;
+    bottom: 0;
+}
+
+.main-subtitle{
+    margin-left:100px;
+}
+
+.big-circle {
+    width: 500px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    flex-shrink: 0;
+    position: absolute;
+    right: 5rem;
+    bottom: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.two-text-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 12rem;
+    position: absolute;
+}
+
+.main-subtitle, .instruction-text {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.main-subtitle{
+    margin-left: 5rem;
+}
+
+.instruction-text{
+    margin-right: 5rem;
+}
+
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: auto;
+    padding-right: 2rem;
+}
+
+.genre-container, .country-container {
+    width: 90%;
+}
+
+.section-title {
+    top: 4%;
+    left: .75%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-left: -1rem;
+}
+
+.circle-1 {
+    width: 120px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    width: 90%;
+}
+
+
+.genre-btn, .country-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 2.5rem;
+    text-align: left;
+    padding: 0.4rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 0 1 auto;
+}
+
+.genre-btn:hover, .country-btn:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    position: fixed;
+    bottom: -5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1570px;
+    height: auto;
+    z-index: 2;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1440px) {
+    .genre-btn, .country-btn {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .circle-1 {
+        width: 140px;
+        height: 70px;
+    }
+    
+    .circle-2 {
+        width: 170px;
+        height: 90px;
+    }
+    
+    .big-circle {
+        width: 400px;
+        height: 90px;
+        right: 4rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .genre-btn, .country-btn {
+        font-size: 2.25rem;
+        padding: 0.3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+        top: 6%;
+    }
+    
+    .circle-1 {
+        width: 100px;
+        height: 55px;
+    }
+    
+    .circle-2 {
+        width: 125px;
+        height: 70px;
+    }
+    
+    .button-group {
+        width: 95%;
+        gap: 0.2rem;
+    }
+    
+    .big-circle {
+        width: 300px;
+        height: 80px;
+        right: 3rem;
+        bottom: 60px;
+        font-size: 1.1rem;
+    }
+    
+    .two-text-container {
+        bottom: 10rem;
+    }
+    
+    .main-subtitle, .instruction-text {
+        font-size: 1rem;
+    }
+    
+    .main-subtitle {
+        margin-left: 3rem;
+    }
+    
+    .instruction-text {
+        margin-right: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .genre-btn, .country-btn {
+        font-size: 2rem;
+        padding: 0.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        top: 5%;
+    }
+    
+    .circle-1 {
+        width: 90px;
+        height: 45px;
+    }
+    
+    .circle-2 {
+        width: 115px;
+        height: 60px;
+    }
+    
+    .buttons-container {
+        margin-top: 10px;
+    }
+    
+    .big-circle {
+        width: 250px;
+        height: 70px;
+        right: 2rem;
+        bottom: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .two-text-container {
+        bottom: 8rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-subtitle, .instruction-text {
+        font-size: 0.9rem;
+        margin: 0.2rem 0;
+        text-align: center;
+    }
+    
+    .main-subtitle {
+        margin-left: 0;
+    }
+    
+    .instruction-text {
+        margin-right: 0;
+    }
+    
+    .logo {
+        bottom: -5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .genre-btn, .country-btn {
+        font-size: 1.6rem;
+        padding: 0.15rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        top: 3%;
+    }
+    
+    .circle-1 {
+        width: 70px;
+        height: 40px;
+    }
+    
+    .circle-2 {
+        width: 90px;
+        height: 45px;
+    }
+    
+    .button-group {
+        width: 100%;
+        gap: 0.1rem;
+        padding-left: 0.5rem;
+    }
+    
+    .buttons-container {
+        margin-top: 5px;
+        padding-right: 0.5rem;
+    }
+    
+    .big-circle {
+        width: 200px;
+        height: 60px;
+        right: 1rem;
+        bottom: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .two-text-container {
+        bottom: 6rem;
+    }
+    
+    .main-subtitle, .instruction-text {
+        font-size: 0.8rem;
+    }
+    
+    .popup-content {
+        max-width: 300px;
+        padding: 1rem;
+    }
+    
+    #popup-title {
+        font-size: 1.2rem;
+    }
+    
+    #popup-content {
+        font-size: 0.9rem;
+    }
+}
