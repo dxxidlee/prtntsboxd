@@ -169,7 +169,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const recommendation = recommendations[selectedGenre][selectedCountry];
             popupTitle.textContent = recommendation.title;
             popupContent.textContent = recommendation.description;
+            
+            // Extract country number from the selectedCountry (e.g., "(01)" from "(01) United States")
+            const countryNumber = selectedCountry.substring(1, 3);
+            
+            // Set background image based on country number
+            popup.style.backgroundImage = `url('img/action/moviebg${countryNumber}.jpg')`;
+            popup.style.backgroundSize = 'cover';
+            popup.style.backgroundPosition = 'center';
+            
             popup.style.display = 'block';
+            
+            console.log(`Loading background image: img/action/moviebg${countryNumber}.jpg`);
         }
     }
 
